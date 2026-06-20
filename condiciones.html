@@ -195,28 +195,24 @@
 </head>
 <body>
 
-    <!-- Menú Lateral -->
     <nav class="sidebar">
         <div class="sidebar-header">
             <i class="fas fa-database"></i> RED OPERATIVA
         </div>
         <ul>
-            <li><a href="#"><i class="fas fa-th-large"></i> Dashboard SAC</a></li>
+            <li><a href="../index.html"><i class="fas fa-th-large"></i> Dashboard SAC</a></li>
             <li><a href="condiciones.html" class="active"><i class="fas fa-file-contract"></i> Condiciones Generales</a></li>
         </ul>
     </nav>
 
-    <!-- Contenido Principal -->
     <main class="main-content">
-       
-        <!-- Selector de Compañía y Mercado -->
+        
         <div class="airline-header">
             <div>
                 <h1 style="font-size: 1.6rem; margin-bottom: 5px;">📍 Matriz de Condiciones Generales</h1>
                 <p style="font-size: 0.85rem; opacity: 0.9;">Consola de Agencias: <span class="badge-status" style="background:#e8f8f5; color:#117a65; font-weight: bold;">MULTIMERCADO GDS</span></p>
             </div>
             <div class="selectors-container">
-                <!-- SELECTOR DE MERCADO -->
                 <div>
                     <label for="mercadoSelect" style="margin-right: 5px; font-size: 0.85rem; font-weight: bold;">Mercado POS:</label>
                     <select id="mercadoSelect" class="airline-selector" onchange="cambiarAerolinea()" style="border-color: #3498db;">
@@ -225,7 +221,6 @@
                         <option value="PE">🇵🇪 Perú</option>
                     </select>
                 </div>
-                <!-- SELECTOR DE AEROLÍNEA -->
                 <div>
                     <label for="aerolineaSelect" style="margin-right: 5px; font-size: 0.85rem; font-weight: bold;">Compañía:</label>
                     <select id="aerolineaSelect" class="airline-selector" onchange="cambiarAerolinea()">
@@ -258,74 +253,67 @@
             </div>
         </div>
 
-        <!-- ENLACES RÁPIDOS (DINÁMICOS POR AEROLÍNEA) -->
         <div class="top-filter-bar" style="font-size: 0.85rem; justify-content: space-around;">
             <div><strong><i class="fas fa-dog"></i> Mascotas:</strong> <a id="linkMascotas" href="#" target="_blank">Consultar Directiva</a></div>
             <div><strong><i class="fas fa-child"></i> Menores:</strong> <a id="linkMenores" href="#" target="_blank">Regulaciones Menores</a></div>
             <div><strong><i class="fas fa-percent"></i> Excepción Impuestos:</strong> <a id="linkImpuestos" href="#" target="_blank">Ver Protocolo</a></div>
         </div>
 
-        <!-- BLOQUE 1: CONTACTOS Y DATOS TÉCNICOS (DINÁMICOS POR AEROLÍNEA) -->
         <div class="grid-info-general" style="margin-top: 20px;">
             <div class="data-panel" style="margin-bottom: 0;">
                 <div class="panel-title"><i class="fas fa-headphones-alt"></i> Canales de Atención y Soporte</div>
                 <div id="tablaContactos"></div>
             </div>
 
-          <div class="data-panel" style="margin-bottom: 0;">
-    <div class="panel-title"><i class="fas fa-gavel"></i> Información Operativa & GDS</div>
-    <table class="consult-table">
-        <thead>
-            <tr>
-                <th>Parámetro Técnico</th>
-                <th>Valor / Configuración</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Código / Documento Penalidad</strong></td>
-                <td><span id="codPenalidad" class="badge-status" style="background:#e8f4fd; color:#2980b9; font-weight:bold;">-</span></td>
-            </tr>
-            <tr>
-                <td><strong>Canal de Reembolsos</strong></td>
-                <td><span id="canalReembolso" class="badge-status" style="background:#f5eef8; color:#8e44ad; font-weight:bold;">-</span></td>
-            </tr>
-            <tr>
-                <td><strong>Prácticas Indebidas</strong></td>
-                <td><a id="linkPracticas" href="#" target="_blank"><i class="fas fa-file-pdf"></i> Evitar Débitos de Cía (ADM)</a></td>
-            </tr>
-            <!-- 📌 NUEVA FILA: Reprogramaciones (Se manejará por JS si existe o no) -->
-            <tr id="filaReprogramaciones" style="display:none;">
-                <td><strong>Reprogramaciones / Schedule Change</strong></td>
-                <td><a id="linkReprogramaciones" href="#" target="_blank" style="color: #e67e22; font-weight: bold;"><i class="fas fa-clock"></i> Ver Procedimiento Oficial</a></td>
-            </tr>
-            <tr id="filaComandoBT" style="display:none;">
-                <td><strong>Comando Cotización Tarifa BT</strong></td>
-                <td><span id="txtComandoBT" class="gds-command">-</span></td>
-            </tr>
-            <!-- 📌 NUEVA FILA: Información Adicional Dinámica -->
-            <tr id="filaInfoAdicional" style="display:none;">
-                <td><strong>Información Adicional</strong></td>
-                <td id="infoAdicionalContainer" style="font-size: 0.85rem; line-height: 1.4;">-</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <div class="data-panel" style="margin-bottom: 0;">
+                <div class="panel-title"><i class="fas fa-gavel"></i> Información Operativa & GDS</div>
+                <table class="consult-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro Técnico</th>
+                            <th>Valor / Configuración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Código / Documento Penalidad</strong></td>
+                            <td><span id="codPenalidad" class="badge-status" style="background:#e8f4fd; color:#2980b9; font-weight:bold;">-</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Canal de Reembolsos</strong></td>
+                            <td><span id="canalReembolso" class="badge-status" style="background:#f5eef8; color:#8e44ad; font-weight:bold;">-</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Prácticas Indebidas</strong></td>
+                            <td><a id="linkPracticas" href="#" target="_blank"><i class="fas fa-file-pdf"></i> Evitar Débitos de Cía (ADM)</a></td>
+                        </tr>
+                        <tr id="filaReprogramaciones" style="display:none;">
+                            <td><strong>Reprogramaciones / Schedule Change</strong></td>
+                            <td><a id="linkReprogramaciones" href="#" target="_blank" style="color: #e67e22; font-weight: bold;"><i class="fas fa-clock"></i> Ver Procedimiento Oficial</a></td>
+                        </tr>
+                        <tr id="filaComandoBT" style="display:none;">
+                            <td><strong>Comando Cotización Tarifa BT</strong></td>
+                            <td><span id="txtComandoBT" class="gds-command">-</span></td>
+                        </tr>
+                        <tr id="filaInfoAdicional" style="display:none;">
+                            <td><strong>Información Adicional</strong></td>
+                            <td id="infoAdicionalContainer" style="font-size: 0.85rem; line-height: 1.4;">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <!-- BLOQUE 2: MATRIZ DE OVER INCENTIVOS (DINÁMICO POR MERCADO Y AEROLÍNEA) -->
         <div class="data-panel" id="panelOver">
             <div class="panel-title"><i class="fas fa-dollar-sign"></i> Esquema de Incentivos</div>
             <div id="tablaOver"></div>
         </div>
 
-        <!-- BLOQUE 3: PASARELA DE PAGOS / COMERCIOS (DINÁMICO POR AEROLÍNEA) -->
         <div class="data-panel" id="panelTarjetas">
             <div class="panel-title"><i class="fas fa-credit-card"></i> Códigos de Comercio Financiero </div>
             <div id="tablaTarjetas"></div>
         </div>
 
-        <!-- BLOQUE 4: BRANDED FARES (DINÁMICO POR AEROLÍNEA) -->
         <div class="data-panel" id="panelFares">
             <div class="panel-title"><i class="fas fa-suitcase-rolling"></i> Estructura de Branded Fares e Inyecciones de Marcas en GDS</div>
             <div id="tablaFares"></div>
@@ -335,11 +323,13 @@
 
     <script>
         // ==========================================
-        // 1. BASE DE DATOS FIJA POR AEROLÍNEA (Información global transversal a todo POS)
+        // 1. BASE DE DATOS FIJA POR AEROLÍNEA
         // ==========================================
         const baseDatosAerolineas = {
-            AA: {
-                mascotas: "https://www.aa.com/i18n/travel-info/special-assistance/pets.jsp",
+            AR:{
+
+                AA: {
+                    mascotas: "https://www.aa.com/i18n/travel-info/special-assistance/pets.jsp",
                 menores: "https://www.aa.com/i18n/travel-info/special-assistance/unaccompanied-minors.jsp",
                 impuestos: "https://ricale-my.sharepoint.com/:b:/p/dg/EY-lUlxKSYJDkIzpSQ4VeaUBsmtIIzT6VMFBuoi1GhDGcg?e=pSsrei",
                 practicas: "https://ricale-my.sharepoint.com/:b:/p/mfischer/EYxD-p-qxqFEgSgDC8aeBhgBlSfaLZrZd0u6mm2HTvVc0A?e=H4j1HB",
@@ -370,12 +360,12 @@
                             <tr><td><strong>FIRST FLEXIBLE</strong></td><td>Solo cabotaje: dos piezas en bodega incluidas, permite cambios y devoluciones sin penalidad.</td><td><code>FXB/FF-FIRFL holiday</code></td><td><code>FQ:TFIRFL</code></td></tr>
                             <tr><td><strong>FLAGSHIP BUS. FLEX (CLASE J)</strong></td><td>Internacional y cabotaje: dos piezas en bodega incluidas, cambios y devolución permitidos sin penalidad. Clase J.</td><td><code>FXB/FF-FBUSFL</code></td><td><code>FQ:TFBUSFL</code></td></tr>
                         </tbody>
-                    </table>`
-            },
-            AC: {
-                mascotas: "https://www.aircanada.com/us/es/aco/home/plan/special-assistance/pets.html#/",
-                menores: "https://www.aircanada.com/us/es/aco/home/plan/special-assistance/travelling-with-children.html#/",
-                impuestos: "https://ricale-my.sharepoint.com/:b:/p/dg/EQgewF3dhv5BvCRcqabVfVYBwMfnNnOMRzGwQlzHckYCjw?e=gZhgdk",
+                        </table>`
+                    },
+                    AC: {
+                        mascotas: "https://www.aircanada.com/us/es/aco/home/plan/special-assistance/pets.html#/",
+                        menores: "https://www.aircanada.com/us/es/aco/home/plan/special-assistance/travelling-with-children.html#/",
+                        impuestos: "https://ricale-my.sharepoint.com/:b:/p/dg/EQgewF3dhv5BvCRcqabVfVYBwMfnNnOMRzGwQlzHckYCjw?e=gZhgdk",
                 practicas: "https://ricale-my.sharepoint.com/:b:/p/mfischer/EYxD-p-qxqFEgSgDC8aeBhgBlSfaLZrZd0u6mm2HTvVc0A?e=yxdeig",
                 penalidad: "CP",
                 reembolso: "GDS / BSPLink según regulación de ticket",
@@ -387,7 +377,7 @@
                             <tr><td><strong>Soporte Agencias</strong></td><td><a href="mailto:Soporteargentina@aircanada.ca">Soporteargentina@aircanada.ca</a></td></tr>
                             <tr><td><strong>Contact Center / Tel.</strong></td><td>11 6842 3263</td></tr>
                             <tr><td><strong>Ejecutiva de Cuenta</strong></td><td>Patricia Garrido (<a href="mailto:patricia.garrido@aircanada.ca">patricia.garrido@aircanada.ca</a>)</td></tr>
-                        </tbody>
+                            </tbody>
                     </table>`,
                 tarjetasHTML: `<p style='color:#7f8c8d; font-size:0.90rem; padding:5px;'>Emision siempre <strong>CASH</strong></p>`,
                 faresHTML: `
@@ -421,8 +411,8 @@
                             <tr><td><strong>Teléfono Soporte</strong></td><td>0800 266 7102 (Opción 2 y luego 1)</td></tr>
                             <tr><td><strong>Ejecutiva de Cuenta</strong></td><td>Ilona Mauro (<a href="mailto:ibartosava@aeromexico.com">ibartosava@aeromexico.com</a>)</td></tr>
                             <tr><td><strong>Tarifas Netas / BT</strong></td><td>Consultar a <a href="mailto:consolidadora@ricale.com">consolidadora@ricale.com</a></td></tr>
-                        </tbody>
-                    </table>`,
+                            </tbody>
+                            </table>`,
                 tarjetasHTML: `
                     <table class="consult-table">
                         <thead><tr><th>Dato Financiero</th><th>Visa</th><th>MasterCard</th><th>American Express</th></tr></thead>
@@ -430,8 +420,8 @@
                             <tr><td><strong>Cód. Comercio</strong></td><td><code>5121422</code></td><td><code>9096253</code></td><td><code>809902701457</code></td></tr>
                             <tr><td><strong>Terminal / Soporte</strong></td><td>laposweb</td><td>0800-666-1406</td><td>0810-555-8000</td></tr>
                             <tr><td><strong>Financiación</strong></td><td colspan="3" style="color:#27ae60; font-weight:bold;">1 Pago Sin Interés</td></tr>
-                        </tbody>
-                    </table>`,
+                            </tbody>
+                            </table>`,
                 faresHTML: `
                     <table class="consult-table">
                         <thead><tr><th>Familia / Promoción</th><th>Descripción e Incidencias de Equipaje</th><th>Amadeus</th><th>Galileo (Travelport)</th></tr></thead>
@@ -448,7 +438,7 @@
                             <tr><td><strong>PREMIER ONE BÁSICA</strong></td><td>Internacional: Artículo personal + carry on (10kg). 1 equipaje incluido en bodega (32kg). No permite cambios, ni devolución.</td><td><code>FXB/FF-PREMIERONB</code></td><td><code>FQ--PREMIERONB:B</code></td></tr>
                             <tr><td><strong>PREMIER ONE CLÁSICA</strong></td><td>Internacional: Artículo personal + carry on (15kg). 2 equipajes incluidos en bodega (32kg). Permite cambios con costo de penalidad, pero no permite devolución.</td><td><code>FXB/FF-PREMIERONE</code></td><td><code>FQ--PREMIERONE:B</code></td></tr>
                             <tr><td><strong>PREMIER ONE FLEX</strong></td><td>Internacional: Artículo personal + carry on (15kg). 2 equipajes en bodega (32kg). Permite cambios y devolución sin penalidad.</td><td><code>FXB/FF-PREMIERONF</code></td><td><code>FQ--PREMIERONF:B</code></td></tr>
-                        </tbody>
+                            </tbody>
                     </table>`
             },
             AR: {
@@ -457,17 +447,22 @@
                 impuestos: "https://ricale-my.sharepoint.com/:b:/p/dg/ETgKe70TaphHt6XrV6xtc0QBUtMtvM1ZHG_k17-6DAS2nQ?e=YCiSeu",
                 practicas: "https://ricale-my.sharepoint.com/:b:/p/mfischer/EYxD-p-qxqFEgSgDC8aeBhgBlSfaLZrZd0u6mm2HTvVc0A?e=2IXbxh",
                 penalidad: "OD",
-                reembolso: "GDS / Reembolso Directo",
+                reembolso: "GDS",
+                reprogramaciones: "https://agencias.aerolineas.com.ar/files/agendar/Agendar_014_26-Actualizacion%20Pol%C3%ADtica%20de%20irregularidades%20en%20el%20%20servicio-%20Desde%2026marzo%202026.jpg",
+                infoAdicional: "Siempre validar en Agendar",
                 comandoBT: "",
                 contactosHTML: `
                     <table class="consult-table">
                         <thead><tr><th>Contacto / Canal</th><th>Detalle / Destinatario</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>Help Desk Agencias (VIP)</strong></td><td><a href="mailto:helpvip@aerolineas.com.ar">helpvip@aerolineas.com.ar</a></td></tr>
+                            <tr><td><strong>Help Desk Agencias (VIP)</strong></td><td><a href="mailto:helpvip@aerolineas.com.ar" target="_blank">helpvip@aerolineas.com.ar</a></td></tr>
+                            <tr><td><strong>Soporte WEB</strong></td><td><a href="https://agencias.aerolineas.com.ar/main.asp?idSitio=AR&idPagina=1003&idIdioma=es" target="_blank">Agendar</a></td></tr>
+                            <tr><td><strong>Contactos BSP</strong></td><td><a href="https://agencias.aerolineas.com.ar/main.asp??idSitio=AR&idPagina=1031&idIdioma=es" target="_blank">Contactos</a></td></tr>
+
                             <tr><td><strong>Ejecutiva de Cuenta</strong></td><td>Vanesa Laglard (<a href="mailto:vanesa.lagiard@aerolineas.com.ar">vanesa.lagiard@aerolineas.com.ar</a>)</td></tr>
                             <tr><td><strong>Notas Operativas</strong></td><td>Mascotas y menores sin acompañar se gestionan exclusivamente vía Call Center de la compañía.</td></tr>
-                        </tbody>
-                    </table>`,
+                            </tbody>
+                            </table>`,
                 tarjetasHTML: `
                     <div style="margin-bottom: 15px;">
                         <h4 style="color:#2c3e50; margin-bottom:8px; border-bottom:1px solid #ccc; padding-bottom:4px;">Códigos de Comercio (1 Pago Sin Interés)</h4>
@@ -477,9 +472,9 @@
                                 <tr><td><strong>Código Comercio</strong></td><td><code>12820486</code></td><td><code>00149116</code></td><td><code>9902702554</code></td><td><code>07691011</code></td><td><code>03610017</code></td><td><code>96301418</code></td></tr>
                                 <tr><td><strong>Terminal/Soporte</strong></td><td>LAPOS WEB</td><td>Fiserv</td><td>0810-555-8000</td><td>0810-444-4424</td><td>0810-555-6272</td><td>4340-5600</td></tr>
                             </tbody>
-                        </table>
-                    </div>                
-                    `,
+                            </table>
+                            </div>                 
+                            `,
                 faresHTML: `
                     <table class="consult-table">
                         <thead><tr><th>Familia / Promoción</th><th>Descripción e Incidencias de Equipaje</th><th>Amadeus</th><th>Galileo (Travelport)</th></tr></thead>
@@ -491,8 +486,8 @@
                             <tr><td><strong>Premium Economy</strong></td><td>1 equipaje en bodega, cambios y devoluciones permitidos sin penalidad.</td><td><code>FXP/FF-PE</code></td><td><code>FQ--PE:B</code></td></tr>
                             <tr><td><strong>Promo Business</strong></td><td>1 equipaje en bodega incluido. Permite cambios con penalidad, no permite devolución.</td><td><code>FXP/FF-BI</code></td><td><code>FQ--BI:B</code></td></tr>
                             <tr><td><strong>Business</strong></td><td>Internacional: 2 equipajes en bodega incluido, cambios y devoluciones sin penalidad.</td><td><code>FXP/FF-BC</code></td><td><code>FQ--BC:B</code></td></tr>
-                        </tbody>
-                    </table>`
+                            </tbody>
+                            </table>`
             },
             CM: {
                 mascotas: "https://www.copaair.com/es-gs/informacion-al-viajar/asistencia-especial/viajando-con-mascotas/",
@@ -567,7 +562,7 @@
                             <tbody>
                                 <tr><td><strong>Código Comercio</strong></td><td><code>5468733</code></td><td><code>02829339</code></td><td><code>67767940406</code></td></tr>
                                 <tr><td><strong>Terminal / Teléfono</strong></td><td>LAPOS WEB</td><td>Fiserv</td><td>Directo por GDS</td></tr>
-                           
+                            
                             </tbody>
                         </table>
                     </div>`,
@@ -592,7 +587,7 @@
                                 <td>Incluye bolso de mano, carry on de 10kg y equipaje en bodega. Permite cambios sin penalidad y permite devolución. Selección de asientos y check-in en aeropuerto incluidos.</td>
                                 <td><code>FXB/FF-I3</code></td>
                                 <td><code>WPBRI3</code></td>
-                            </tr>
+                                </tr>
                             <tr>
                                 <td><strong>TRAVEL (I0)</strong></td>
                                 <td>Incluye bolso de mano y equipaje en bodega. <span style="color:#c0392b; font-weight:bold;">NO incluye carry on</span>. Permite cambios con penalidad.</td>
@@ -614,18 +609,18 @@
                 practicas: "https://ricale-my.sharepoint.com/:b:/p/mfischer/EYxD-p-qxqFEgSgDC8aeBhgBlSfaLZrZd0u6mm2HTvVc0A?e=cjkWSy",
                 penalidad: "YR",
                 reembolso: "GDS",
-                reprogramaciones: "https://static.voegol.com.br/...",
-                infoAdicional: "<strong>Atención:</strong> Las reservas de grupos requieren un código de autorización block-space previo a la emisión en el GDS.",
+                reprogramaciones: "https://static.voegol.com.br/voegol/2025-09-16/240725%20_%20Regras_e_procedimentos_Schedule_Change_POS_EXT_ESP.pdf?_gl=1*1x7s1ss*_gcl_au*MTIyMjc0MTI2My4xNzY1NTM3NTMy",
+                infoAdicional: "<strong>Atención:</strong> SI ESTA TARIFA SE COMBINA CON OTRA TARIFA Y SOLO SE MODIFICA UN COMPONENTE DE LA TARIFA, SE APLICARÁN LAS CONDICIONES DE REEMISIÓN DEL COMPONENTE DE TARIFA MODIFICADO. <br/> SI SE MODIFICAN MÁS DE UN COMPONENTE DE LA TARIFA, SE APLICARÁN LAS CONDICIONES DE REEMISIÓN POR COMPONENTE DE TARIFA MODIFICADO. SE DEBEN COBRAR CARGOS POR CADA CAMBIO DE COMPONENTE DE TARIFA. LOS CARGOS POR CADA CAMBIO SE APLICAN POR PASAJERO Y POR TRAMO.",
                 comandoBT: "",
                 contactosHTML: `
                     <table class="consult-table">
                         <thead><tr><th>Contacto / Canal</th><th>Detalle / Destinatario</th><th>Observaciones / Adicional</th></tr></thead>
                         <tbody>
                             <tbody>
-                            <tr><td><strong>Soporte Agencias</strong></td><td><a href='mailto:agencia.inter@voegol.com.br'>agencia.inter@voegol.com.br</a></td><td>Canal exclusivo de atención para agencias de viajes</td></tr>
+                            <tr><td><strong>Soporte Agencias</strong></td><td>agencia.inter@voegol.com.br <br/> contactenos@voegol.com.br <br/> sac@golnaweb.com.br<br/>reembolso@golnaweb.com.br </td><td>Canal exclusivo de atención para agencias de viajes</td></tr>
                             <tr><td><strong>Ejecutiva de Cuenta</strong></td><td>María Sol Kardashian (<a href='mailto:mskardashian@voegol.com.br'>mskardashian@voegol.com.br</a>)</td><td>Atención comercial corporativa / agencias</td></tr>
                             <tr><td><strong>Teléfono Soporte</strong></td><td><code>0810-266-3131</code></td><td>Centro de atención telefónica</td></tr>
-                            <tr><td><strong>Tarifas Netas / BT</strong></td><td>Consultar a <a href='mailto:consolidadora@ricale.com'>consolidadora@ricale.com</a></td><td><strong style="color:#d35400;">* NOTA: Las tarifas de tour operador van obligatoriamente con alojamiento.</strong></td></tr>
+                            
                         </tbody>
                     </table>`,
                 tarjetasHTML: `
@@ -663,7 +658,7 @@
                                 <td><span style="color:#c0392b; font-weight:bold;">SOLO RUTA INTERNACIONAL</span>: Incluye únicamente artículo personal (10kg). Permite cambios con costo antes de la salida. No permite devolución. Snack incluido a bordo.</td>
                                 <td><code>FXB/FF-BI</code></td>
                                 <td><code>WPNCB¥BRBI</code></td>
-                            </tr>
+                                </tr>
                         </tbody>
                     </table>`
             },
@@ -690,13 +685,281 @@
                 faresHTML: `
                     <p style='color:#7f8c8d; font-size:0.90rem; padding:5px;'>Consultar disponibilidad de familias tarifarias directamente mediante comando <code>FXB</code> (Amadeus) o <code>WPNCB</code> (Sabre).</p>`
             },
-        };
+        },
+        CL: { // 🇨🇱 MERCADO CHILE (INFORMACIÓN DE CONTACTOS Y FICHAS COMERCIALES)
+                AA: {
+                    mascotas: "https://www.aa.com/i18n/travel-info/special-assistance/pets.jsp",
+                    menores: "https://www.aa.com/i18n/travel-info/special-assistance/unaccompanied-minors.jsp",
+                    impuestos: "#", practicas: "#", penalidad: "CP", reembolso: "GDS",
+                    reprogramaciones: "https://saleslink.aa.com/en-US/resources/html/schedule-change.html", // Se activará la fila condicional automáticamente
+    
+    contactosHTML: `    
+        <table class="consult-table">
+            <thead>
+                <tr><th>Canal de Soporte</th><th>Detalle de Cuenta / Horarios</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sales Support</strong><br><small>Consultas generales de agencias</small></td>
+                    <td>
+                        📧 <strong>Mail:</strong> <a href="mailto:american.support@aa.com">american.support@aa.com</a><br>
+                        🕒 <strong>Atención:</strong> Lunes a Domingo de 08:00 a 22:00 hrs.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Soporte Telefónico</strong></td>
+                    <td>
+                        📞 <strong>Tel:</strong> <code>+51 1 211-7000</code><br>
+                        <small style="color: #555;">💡 <strong>Pasos:</strong> Marcar 1 (Español) ➔ 5 (Agencias) ➔ 3 (Agency Support) ➔ Ingresar los primeros 7 dígitos del número IATA.</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>SalesLink Principal</strong></td>
+                    <td><a href="https://saleslink.aa.com/en-US/index.html#/home" target="_blank"><i class="fas fa-external-link-alt"></i> Acceder a SalesLink Home</a></td>
+                </tr>
+            </tbody>
+        </table>`,
+        
+    infoAdicional: `
+        <div style="padding: 5px;">
+            <strong style="color: #2c3e50;"><i class="fas fa-folder-open"></i> Biblioteca Digital / Manuales del Agente:</strong>
+            <ul style="margin-top: 5px; padding-left: 15px; list-style-type: square;">
+                <li><a href="https://saleslink.aa.com/en-US/#/AgencyRefer" target="_blank">Políticas y Procedimientos Generales (Agency Reference)</a></li>
+                <li><a href="https://saleslink.aa.com/en-US/travelnotice.html" target="_blank">Alertas de Viaje (Travel Notice)</a></li>
+                <li><a href="https://ssc.aa.com/siebel/aaedocsENU/AAEContactUs.html" target="_blank">Directorio de Contactos Globales</a></li>
+                <li><a href="https://saleslink.aa.com/en-US/resources/html/name-correction-guidelines.html" target="_blank">Instructivo para Corrección de Nombres</a></li>
+                <li><a href="https://saleslink.aa.com/en-US/resources/html/ticketing-time-limit-and-expired-fare-waiver.html" target="_blank">Emisión con Tarifa Expirada (Waiver 24 hrs)</a></li>
+                <li><a href="https://saleslink.aa.com/en-US/resources/html/bsp-ticket-refund.html" target="_blank">Devolución dentro de las 24 horas de emisión</a></li>
+                <li><a href="https://saleslink.aa.com/en-US/resources/html/bsp-refund-application-ra-residual.html" target="_blank">Solicitud de Devolución residual (Transportation Voucher)</a></li>
+                <li><a href="https://saleslink.aa.com/en-US/resources/html/transportation-vouchers.html" target="_blank">Instructivo: Emitir usando un Transportation Voucher</a></li>
+            </ul>
+        </div>`,
+                },
+                AC: {
+                    mascotas: "https://www.aircanada.com", menores: "#", impuestos: "#", practicas: "#", penalidad: "CP", reembolso: "GDS / Ver Anulaciones",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Constanza Medina</strong></td><td><a href="mailto:constanza.medina@agunsa.com">constanza.medina@agunsa.com</a></td></tr><tr><td><strong>Anulaciones / Admin</strong></td><td><a href="mailto:administracionaerea@agunsa.cl">administracionaerea@agunsa.cl</a></td></tr></tbody></table>`,
+                },
+                AM: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "CP", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Marcela González</strong></td><td><a href="mailto:mgonzalez@aeromexico.com">mgonzalez@aeromexico.com</a></td></tr></tbody></table>`,
+                },
+                AR: {
+                    mascotas: "https://www.aerolineas.com.ar", menores: "#", impuestos: "#", practicas: "#", penalidad: "OD", reembolso: "GDS / BSP Link",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial</th><th>E-mail / Detalles</th></tr></thead><tbody><tr><td><strong>Juana Victoria Delgado Tobar</strong></td><td><a href="mailto:juana.delgado@aerolineas.com.ar">juana.delgado@aerolineas.com.ar</a></td></tr></tbody></table>`,
+                },
+                AV: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Juliana Martínez</strong></td><td><a href="mailto:julianapaola.martinez@avianca.com">julianapaola.martinez@avianca.com</a></td></tr></tbody></table>`,
+                },
+                AF: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>José Plaza</strong></td><td><a href="mailto:jose.plaza@airfranceklm.com">jose.plaza@airfranceklm.com</a></td></tr></tbody></table>`,
+                },
+                CM: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Irma Soto Alfaro</strong></td><td><a href="mailto:Pasoto@copaair.com">Pasoto@copaair.com</a></td></tr></tbody></table>`,
+                },
+                DL: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Laura Cabargas</strong></td><td><a href="mailto:Laura.Cabargas@delta.com">Laura.Cabargas@delta.com</a></td></tr></tbody></table>`,
+                },
+                EK: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial (Aviareps)</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Josefina Tovar</strong></td><td><a href="mailto:JTovar@aviareps.com">JTovar@aviareps.com</a></td></tr></tbody></table>`,
+                },
+                G3: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Canal de Soporte GOL</th><th>Contacto / Detalle</th></tr></thead><tbody><tr><td><strong>Soporte Ejecutivos</strong></td><td><a href="mailto:helpejecutivointer@voegol.com.br">helpejecutivointer@voegol.com.br</a></td></tr><tr><td><strong>Soporte Agencias</strong></td><td><a href="mailto:agencia.inter@voegol.com.br">agencia.inter@voegol.com.br</a><br>📞 +55 11 3471 2973</td></tr><tr><td><strong>Centro de Reservas</strong></td><td><a href="mailto:golexpert.inter@voegol.com.br">golexpert.inter@voegol.com.br</a><br>📞 800395231</td></tr></tbody></table>`,
+                },
+                HR: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "HR GDS", reembolso: "GDS / BSP Link",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial</th><th>E-mail / Cobertura</th></tr></thead><tbody><tr><td><strong>Ignacio Giorgi</strong></td><td><a href="mailto:I.Giorgi@hahnair.com">I.Giorgi@hahnair.com</a><br><a href="https://www.hahnair.com/es" target="_blank">🔗 Validar aerolíneas/GDS permitidos aquí</a></td></tr></tbody></table>`,
+                },
+                H2: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial Sky</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Helga Herbst Herbst</strong></td><td><a href="mailto:helga.herbst@skyairline.com">helga.herbst@skyairline.com</a></td></tr></tbody></table>`,
+                },
+                IB: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "CP", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial Iberia</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Diego Antonio Tirapegui Morales</strong></td><td><a href="mailto:datirapegui@iberia.es">datirapegui@iberia.es</a></td></tr></tbody></table>`,
+                },
+                LA: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial LATAM</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Gerardo Sosa Anton</strong></td><td><a href="mailto:gerardo.sosa@latam.com">gerardo.sosa@latam.com</a></td></tr></tbody></table>`,
+                },
+                LH: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Canal / Contacto</th><th>Detalles</th></tr></thead><tbody><tr><td><strong>Consultas en Chile</strong></td><td><a href="mailto:lhchile@umar.cl">lhchile@umar.cl</a></td></tr><tr><td><strong>Call Center / Soporte</strong></td><td><a href="mailto:lhg.chile@agentsupport.dlh.de">lhg.chile@agentsupport.dlh.de</a><br>📞 0054 11 20397265</td></tr><tr><td><strong>Directiva Oficial</strong></td><td><a href="https://docs.google.com/document/d/16yZ2s-wNTxVfUa6Ns-bYpy-S-nHP957aGCwwIKm8Gm4/edit?usp=sharing" target="_blank">🔗 Ver Documento Google Docs</a></td></tr></tbody></table>`,
+                },
+                QR: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto / Canal QR</th><th>Detalle de Atención</th></tr></thead><tbody><tr><td><strong>Soporte General CL</strong></td><td><a href="mailto:qatarairways@umar.cl">qatarairways@umar.cl</a></td></tr><tr><td><strong>Ma. Virginia García (UMAR)</strong></td><td><a href="mailto:vigarcia@umar.cl">vigarcia@umar.cl</a></td></tr><tr><td><strong>Directiva e Incentivos</strong></td><td><a href="https://drive.google.com/file/d/1qKZD8bxfNl3sWPev1LzP2RX5xJmpJMcj/view?usp=sharing" target="_blank">🔗 Ver Archivo de Incentivos</a></td></tr></tbody></table>`,
+                },
+                UA: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial United</th><th>E-mail / Enlace</th></tr></thead><tbody><tr><td><strong>Liliana Cabello Alvarez</strong></td><td><a href="mailto:liliana.cabello@united.com">liliana.cabello@united.com</a></td></tr><tr><td><strong>Directiva Completa</strong></td><td><a href="https://docs.google.com/document/d/1-8Ogvs7wt0_PRLOWZP4do7pDCICy7i6g/edit?usp=sharing" target="_blank">🔗 Ver Documento de Regulaciones</a></td></tr></tbody></table>`,
+                },
+                WJ: {
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "CP", reembolso: "GDS",
+                    contactosHTML: `<table class="consult-table"><thead><tr><th>Contacto Comercial JetSmart</th><th>E-mail</th></tr></thead><tbody><tr><td><strong>Pablo Garcia</strong></td><td><a href="mailto:pablo.garcia@jetsmart.com">pablo.garcia@jetsmart.com</a></td></tr></tbody></table>`,
+                }
+            },
+            PE: { // 🇵🇪 MERCADO PERÚ (INFORMACIÓN DE CONTACTOS Y EJECUTIVOS LOCALES)
+                LA: { // LATAM & LATAM NDC
+                    mascotas: "https://www.latamtrade.com/es_pe/",
+                    menores: "https://www.latamtrade.com/es_pe/",
+                    impuestos: "#", practicas: "#", penalidad: "GDS / NDC", reembolso: "GDS / Latam Trade",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead>
+                                <tr><th>Canal / Soporte LATAM Perú</th><th>E-mail / Enlace</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>LATAM Trade (Políticas y Reglas)</strong></td>
+                                    <td><a href="https://www.latamtrade.com/es_pe/" target="_blank">www.latamtrade.com/es_pe/</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Portal LATAM NDC</strong></td>
+                                    <td><a href="https://www.latamtrade.com/es_pe/" target="_blank">Acceso Directo NDC</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Soporte por Áreas</strong></td>
+                                    <td><span class="badge-status" style="background:#edf2f7; color:#2d3748;"><i class="fas fa-search"></i> Revisar pestaña LATAM según el área específica</span></td>
+                                </tr>
+                            </tbody>
+                        </table>`
+                },
+                CM: { // COPA AIRLINES
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutiva Comercial</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Lilibeth Calderon Vergaray</strong></td><td><a href="mailto:licalderon@copaair.com">licalderon@copaair.com</a></td></tr></tbody>
+                        </table>`
+                },
+                H2: { // SKY AIRLINE
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutivo Comercial</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Berenice Collantes</strong></td><td><a href="mailto:berenice.collantes@skyairline.com">berenice.collantes@skyairline.com</a></td></tr></tbody>
+                        </table>`
+                },
+                DL: { // DELTA AIRLINES
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutiva Comercial</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Delia Ortega</strong></td><td><a href="mailto:delia.ortega@delta.com">delia.ortega@delta.com</a></td></tr></tbody>
+                        </table>`
+                },
+                UX: { // AIR EUROPA
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutivo / Soporte</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Mario Duran</strong> <br><small>(Soporte Agencias Perú)</small></td><td><a href="mailto:soporteagencias.peru@aireuropa.com">soporteagencias.peru@aireuropa.com</a></td></tr></tbody>
+                        </table>`
+                },
+                LH: { // LUFTHANSA GROUP
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Canal de Soporte</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Lufthansa / Swiss Support Perú</strong></td><td><a href="mailto:lhg.peru@agentsupport.dlh.de">lhg.peru@agentsupport.dlh.de</a></td></tr></tbody>
+                        </table>`
+                },
+                AR: { // AEROLINEAS ARGENTINAS
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "OD", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutivo Comercial</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Charo Aponte</strong> <br><small>(María Aponte)</small></td><td><a href="mailto:maria.aponte@aerolineas.com.ar">maria.aponte@aerolineas.com.ar</a></td></tr></tbody>
+                        </table>`
+                },
+                AC: { // AIR CANADA
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "CP", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutivo Comercial (Agunsa)</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Nancy Agarie</strong></td><td><a href="mailto:nancy.agarie@agunsa.com">nancy.agarie@agunsa.com</a></td></tr></tbody>
+                        </table>`
+                },
+                PU: { // PLUS ULTRA (Asegúrate de tener la opción PU en tu select de aerolíneas)
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutivo / Área Comercial</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Jose Castellanos</strong></td><td><a href="mailto:comerciallima@plusultra.com">comerciallima@plusultra.com</a></td></tr></tbody>
+                        </table>`
+                },
+                WJ: { // JETSMART
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "CP", reembolso: "Web / GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutivo / Soporte</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Shaony Revolledo</strong></td><td><a href="mailto:shaony.revolledo@jetsmart.com">shaony.revolledo@jetsmart.com</a></td></tr>
+                                <tr><td><strong>Soporte Agencias General</strong></td><td><a href="mailto:soporte.agencias@jetsmart.com">soporte.agencias@jetsmart.com</a></td></tr>
+                            </tbody>
+                        </table>`
+                },
+                AF: { // KLM / AIR FRANCE
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutiva Comercial</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Vanessa Rodriguez</strong></td><td><a href="mailto:vanessa.rodriguez@klm.com">vanessa.rodriguez@klm.com</a></td></tr></tbody>
+                        </table>`
+                },
+                UA: { // UNITED AIRLINES
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutiva Comercial</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Martha Peralta</strong></td><td><a href="mailto:martha.peralta@united.com">martha.peralta@united.com</a></td></tr></tbody>
+                        </table>`
+                },
+                QR: { // QATAR AIRWAYS
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "EMD", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutiva / GSA Discover</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Claudia Gálvez</strong></td>
+                                    <td>
+                                        <a href="mailto:claudia.galvez@discovertheworld.co">claudia.galvez@discovertheworld.co</a><br>
+                                        <a href="mailto:gina.defina@discovertheworld.co">gina.defina@discovertheworld.co</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>`
+                },
+                EK: { // EMIRATES
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Ejecutivo Comercial (Agunsa)</th><th>E-mail de Contacto</th></tr></thead>
+                            <tbody><tr><td><strong>Alberto Garay</strong></td><td><a href="mailto:alberto.garay@agunsa.com">alberto.garay@agunsa.com</a></td></tr></tbody>
+                        </table>`
+                },
+                G3: { // GOL LÍNEAS AÉREAS
+                    mascotas: "#", menores: "#", impuestos: "#", practicas: "#", penalidad: "GDS", reembolso: "GDS",
+                    contactosHTML: `
+                        <table class="consult-table">
+                            <thead><tr><th>Soporte GOL Perú</th><th>Estado de Cuenta</th></tr></thead>
+                            <tbody><tr><td><strong>Mesa Operativa / Ejecutiva</strong></td><td><span class="badge-status" style="background:#fef9e7; color:#b7950b;">Pendiente asignación directa de e-mail</span></td></tr></tbody>
+                        </table>`
+                }
+            },
+        }
+        ;
 
-        // ==========================================
-        // 2. MATRIZ DE OVER EXCLUSIVA (Indexada por Mercado -> Aerolínea)
-        // ==========================================
+        // Base de datos simulada para Incentivos/Over (ejemplo estructural)
         const baseDatosOver = {
-            AR: {
+          AR: {
                 AA: `
                     <table class="consult-table">
                         <thead><tr><th>Regla Tarifaria</th><th>Ruta / Destinos</th><th>Comisión / Over</th></tr></thead>
@@ -730,7 +993,7 @@
                             </tbody>
                         </table>
                     </div>
-                   
+                    
                     <div style="margin-bottom: 25px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; background:#2980b9; color:white; padding:8px 12px; border-radius:4px 4px 0 0;">
                             <h4 style="margin:0; font-size:1.1rem;">Acuerdo de Over Incentivos — 15%</h4>
@@ -862,7 +1125,7 @@
                         </table>
                         <p style="font-size:0.85rem; color:#7f8c8d; margin-top:5px; font-style:italic;">* De manera estándar, GOL opera bajo el régimen de comisión 0% en tickets aéreos emitidos en el mercado de Argentina.</p>
                     </div>`,
-               
+                
                 QR: `
                     <div style="margin-bottom: 15px;">
                         <div style="background:#1a5276; color:white; padding:8px 12px; border-radius:4px 4px 0 0;">
@@ -981,7 +1244,7 @@
                             </tbody>
                         </table>
                     </div>
-                   
+                    
                     <div style="font-size:0.83rem; color:#2c3e50; background:#f9f9f9; padding:8px; border-left:4px solid #78281f; border-radius:0 0 4px 4px;">
                         <strong>Nota importante de Emisión:</strong> Asegurarse de validar correctamente la matriz de clases (RBD) antes de cotizar de forma neta para evitar reclamos regulatorios o ADMs por sobrecomisiones mal aplicadas en tramos con stopover o combinaciones tarifarias.
                     </div>`,
@@ -1281,7 +1544,10 @@
                 </tbody>
             </table>`
     },
-            PE: {
+            
+    
+    
+    PE: {
         // --- AMERICAN AIRLINES ---
         AA: `
             <table class="consult-table">
@@ -1526,75 +1792,71 @@
         };
 
         // ==========================================
-        // 3. CONTROLADOR INTERNO DE RENDERIZADO ASÍNCRONO
+        // 2. FUNCIÓN DE RENDERIZADO DINÁMICO
         // ==========================================
         function cambiarAerolinea() {
             const mercado = document.getElementById("mercadoSelect").value;
             const aerolinea = document.getElementById("aerolineaSelect").value;
 
-            // Extraer la ficha fija de la aerolínea elegida (Funciona de forma global para cualquier POS)
-            const airData = baseDatosAerolineas[aerolinea];
+            // Intentar leer datos del mercado seleccionado
+            const datosMercado = baseDatosAerolineas[mercado];
+            const config = datosMercado ? datosMercado[aerolinea] : null;
 
-            if (airData) {
-                // Inyectar links fijos de la aerolínea
-                document.getElementById("linkMascotas").href = airData.mascotas || "#";
-                document.getElementById("linkMenores").href = airData.menores || "#";
-                document.getElementById("linkImpuestos").href = airData.impuestos || "#";
-                document.getElementById("linkPracticas").href = airData.practicas || "#";
+            if (config) {
+                // Inyección de Enlaces
+                document.getElementById("linkMascotas").href = config.mascotas || "#";
+                document.getElementById("linkMenores").href = config.menores || "#";
+                document.getElementById("linkImpuestos").href = config.impuestos || "#";
+                document.getElementById("linkPracticas").href = config.practicas || "#";
 
-                // Inyectar datos operativos fijos de la aerolínea
-                document.getElementById("codPenalidad").innerText = airData.penalidad || "Ver GDS";
-                document.getElementById("canalReembolso").innerText = airData.reembolso || "GDS / BSP";
+                // Parámetros técnicos fijos
+                document.getElementById("codPenalidad").innerText = config.penalidad || "-";
+                document.getElementById("canalReembolso").innerText = config.reembolso || "-";
 
-                // 1. Control de la fila de Reprogramaciones (como la que agregamos en G3)
-const filaRepro = document.getElementById('filaReprogramaciones');
-const linkRepro = document.getElementById('linkReprogramaciones');
+                // Manejo de Reprogramaciones
+                if (config.reprogramaciones) {
+                    document.getElementById("filaReprogramaciones").style.display = "table-row";
+                    document.getElementById("linkReprogramaciones").href = config.reprogramaciones;
+                } else {
+                    document.getElementById("filaReprogramaciones").style.display = "none";
+                }
 
-if (aerolinea.reprogramaciones) {
-    linkRepro.href = aerolinea.reprogramaciones;
-    filaRepro.style.display = ''; // Muestra la fila si existe el link
-} else {
-    filaRepro.style.display = 'none'; // La oculta si no está cargado
-};
-
-// 2. Control de Información Adicional (Cualquier texto o HTML extra por cía)
-const filaInfo = document.getElementById('filaInfoAdicional');
-const containerInfo = document.getElementById('infoAdicionalContainer');
-
-if (aerolinea.infoAdicional) {
-    containerInfo.innerHTML = aerolinea.infoAdicional;
-    filaInfo.style.display = ''; // Muestra la fila
-} else {
-    filaInfo.style.display = 'none'; // La oculta si no hay info extra
-};
-
-
-
-                // Manejo dinámico de la fila de tarifas BT
-                if (airData.comandoBT && airData.comandoBT.trim() !== "") {
+                // Manejo de Comando BT
+                if (config.comandoBT) {
                     document.getElementById("filaComandoBT").style.display = "table-row";
-                    document.getElementById("txtComandoBT").innerText = airData.comandoBT;
+                    document.getElementById("txtComandoBT").innerText = config.comandoBT;
                 } else {
                     document.getElementById("filaComandoBT").style.display = "none";
                 }
 
-                // Inyectar bloques estructurados de la aerolínea
-                document.getElementById("tablaContactos").innerHTML = airData.contactosHTML || "";
-                document.getElementById("tablaTarjetas").innerHTML = airData.tarjetasHTML || "";
-                document.getElementById("tablaFares").innerHTML = airData.faresHTML || "";
+                // Manejo de Información Adicional
+                if (config.infoAdicional) {
+                    document.getElementById("filaInfoAdicional").style.display = "table-row";
+                    document.getElementById("infoAdicionalContainer").innerHTML = config.infoAdicional;
+                } else {
+                    document.getElementById("filaInfoAdicional").style.display = "none";
+                }
+
+                // Inyecciones de bloques HTML estructurados
+                document.getElementById("tablaContactos").innerHTML = config.contactosHTML || "";
+                document.getElementById("tablaTarjetas").innerHTML = config.tarjetasHTML || "";
+                document.getElementById("tablaFares").innerHTML = config.faresHTML || "";
+
             } else {
-                // Limpieza preventiva si se elige una Cía no declarada completamente en fichas fijas
-                document.getElementById("tablaContactos").innerHTML = "<p style='padding:10px; color:gray;'>Ficha técnica de contactos no disponible.</p>";
+                // Estado por defecto si no hay datos de la aerolínea en ese mercado
+                document.getElementById("tablaContactos").innerHTML = "<p style='padding:10px; color:gray;'>Ficha técnica de contactos no disponible para este Mercado/Cía.</p>";
                 document.getElementById("codPenalidad").innerText = "-";
                 document.getElementById("canalReembolso").innerText = "-";
+                document.getElementById("filaReprogramaciones").style.display = "none";
                 document.getElementById("filaComandoBT").style.display = "none";
+                document.getElementById("filaInfoAdicional").style.display = "none";
                 document.getElementById("tablaTarjetas").innerHTML = "";
                 document.getElementById("tablaFares").innerHTML = "";
             }
 
             // --- PROCESAMIENTO EXCLUSIVO DE OVER INCENTIVOS POR MERCADO ---
-            const datosMercado = baseDatosOver[mercado];
-            const htmlOver = datosMercado ? datosMercado[aerolinea] : null;
+            const datosMercadoOver = baseDatosOver[mercado];
+            const htmlOver = datosMercadoOver ? datosMercadoOver[aerolinea] : null;
 
             if (htmlOver) {
                 document.getElementById("tablaOver").innerHTML = htmlOver;
